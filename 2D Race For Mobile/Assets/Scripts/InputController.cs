@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using JoostenProductions;
 
 public class InputController : BaseController
 {

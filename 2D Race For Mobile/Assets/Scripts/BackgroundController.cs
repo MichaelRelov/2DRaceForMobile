@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BackgroundController
@@ -25,7 +23,7 @@ public class BackgroundController
 
     private void OnLeftMove(float value)
     {
-        _background.Move(-value);
+        _background.Move(value);
     }
 
     private void OnRightMove(float value)
