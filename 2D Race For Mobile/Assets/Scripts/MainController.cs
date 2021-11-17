@@ -22,15 +22,12 @@ public class MainController : BaseController
         switch (state)
         {
             case GameState.None:
-                Debug.Log("None");
                 break;
             case GameState.Start:
-                Debug.Log("Start");
                 _current = new MenuController(_model, _UIRoot);
                 break;
             case GameState.Game:
-                Debug.Log("Game");
-                _current = new GameController();
+                _current = new GameController(_model, _UIRoot);
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(state), state, null);

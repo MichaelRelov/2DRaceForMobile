@@ -15,6 +15,5 @@ public class MainMenuView : MonoBehaviour
     private void OnButtonClick()
     {
         OnStartButtonClick?.Invoke();
-        Debug.Log("Click");
     }
 }

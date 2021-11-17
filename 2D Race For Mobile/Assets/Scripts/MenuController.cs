@@ -21,7 +21,6 @@ public class MenuController : BaseController
     private void StartGame()
     {
         _playerData.State.Value = GameState.Game;
-        Debug.Log("StartGame");
     }
 
     protected override void OnDispose()

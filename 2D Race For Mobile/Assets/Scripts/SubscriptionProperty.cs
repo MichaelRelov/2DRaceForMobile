@@ -2,12 +2,15 @@ using System;
 
 public class SubscriptionProperty<T> : ISubscriptionProperty<T>
 {
-    public T Value { get; set; }
+    private T _value;
     private Action<T> _onValueChange;
-
-    public SubscriptionProperty(T value)
-    {
-        Value = value;
+    public T Value {
+        get => _value;
+        set
+        {
+            _value = value;
+            _onValueChange?.Invoke(_value);
+        }
     }
 
     public void SubscribeOnChange(Action<T> action)
