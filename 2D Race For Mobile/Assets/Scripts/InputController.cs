@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class InputController : BaseController
 {
-    private ResourcePath _inputPath = new ResourcePath() { PathResource = "Prefabs/StickControl" };
+    private ResourcePath _inputPath = new ResourcePath() { PathResource = "Prefabs/ButtonControl" };
     private readonly PlayerData _model;
     private readonly SubscriptionProperty<float> _leftMove;
     private readonly SubscriptionProperty<float> _rightMove;
