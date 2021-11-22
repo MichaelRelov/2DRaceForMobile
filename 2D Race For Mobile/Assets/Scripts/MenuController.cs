@@ -3,17 +3,20 @@ using UnityEngine;
 public class MenuController : BaseController
 {
     private readonly PlayerData _playerData;
+    private readonly IAdsShowed _adsShowed;
     private readonly ResourcePath _menuViewResource = new ResourcePath { PathResource = "Prefabs/MainMenu" };
     private MainMenuView _menuView;
 
-    public MenuController(PlayerData playerData, Transform UIRoot)
+    public MenuController(PlayerData playerData, Transform UIRoot, IAdsShowed ads)
     {
         _playerData = playerData;
+        _adsShowed = ads;
         var prefab = ResourceLoader.LoadPrefab(_menuViewResource);
         var go = GameObject.Instantiate(prefab, UIRoot);
         AddGameObject(go);
         _menuView = go.GetComponent<MainMenuView>();
         _menuView.OnStartButtonClick += StartGame;
+        _menuView.OnShowRewardedClick += ShowRewarded;
     }
 
     private void StartGame()
@@ -21,9 +24,20 @@ public class MenuController : BaseController
         _playerData.State.Value = GameState.Game;
     }
 
+    private void ShowRewarded()
+    {
+        _adsShowed.ShowRewarded(() => Debug.Log("Show Rewarded"));
+    }
+
+    //public void BuySpeed()
+    //{
+    //    _playerData.Car = new Car(10f);
+    //}
+
     protected override void OnDispose()
     {
         _menuView.OnStartButtonClick -= StartGame;
+        _menuView.OnShowRewardedClick -= ShowRewarded;
         base.OnDispose();
     }
 }

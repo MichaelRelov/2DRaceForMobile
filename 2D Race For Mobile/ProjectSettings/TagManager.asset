@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Cursore
+  - UIEffects
   - 
   - 
   - 
@@ -44,6 +44,6 @@ TagManager:
   - name: UI
     uniqueID: 2720179185
     locked: 0
-  - name: Cursore
+  - name: UIEffects
     uniqueID: 2952784033
     locked: 0
