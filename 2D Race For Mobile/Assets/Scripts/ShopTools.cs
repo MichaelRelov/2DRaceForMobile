@@ -7,6 +7,8 @@ using UnityEngine.Purchasing;
 public class ShopTools : IShop, IStoreListener
 {
     private IStoreController _controller;
+    
+
 
     public ShopTools(List<ProductData> products)
     {
@@ -63,6 +65,6 @@ public class ShopTools : IShop, IStoreListener
 
     public void RestorePurchase()
     {
-        throw new NotImplementedException();
+        return;
     }
 }

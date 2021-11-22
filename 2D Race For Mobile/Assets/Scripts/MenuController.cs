@@ -29,6 +29,11 @@ public class MenuController : BaseController
         _adsShowed.ShowRewarded(() => Debug.Log("Show Rewarded"));
     }
 
+    //public void BuySpeed()
+    //{
+    //    _playerData.Car = new Car(10f);
+    //}
+
     protected override void OnDispose()
     {
         _menuView.OnStartButtonClick -= StartGame;

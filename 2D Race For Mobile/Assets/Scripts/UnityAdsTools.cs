@@ -14,7 +14,7 @@ public class UnityAdsTools : MonoBehaviour, IAdsShowed, IUnityAdsListener
     private const string INTERSTITIAL_ANDR = "Interstitial_Android";
     private const string REWARDED_ANDR = "Rewarded_Android";
 
-    private bool _isInitialized = false;
+    
     private Action _onRewardedSuccess;
 
     private void Start()
@@ -52,6 +52,6 @@ public class UnityAdsTools : MonoBehaviour, IAdsShowed, IUnityAdsListener
     public void OnUnityAdsReady(string placementId)
     {
         Debug.Log($"Placement ready {placementId}");
-        _isInitialized = true;
+        
     }
 }

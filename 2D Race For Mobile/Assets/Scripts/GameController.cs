@@ -15,7 +15,7 @@ public class GameController : BaseController
         _rightMove = new SubscriptionProperty<float>();
 
         var background = new BackgroundController(_model, _leftMove, _rightMove);
-        var car = new CarController(_model);
+        var car = new CarController();
         var input = new InputController(_model, _leftMove, _rightMove, _UIRoot);
     }
 }

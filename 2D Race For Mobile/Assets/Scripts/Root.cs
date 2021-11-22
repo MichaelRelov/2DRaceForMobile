@@ -9,7 +9,7 @@ public class Root : MonoBehaviour
     void Awake()
     {
         var analytics = new UnityAnalyticsHandler();
-        var playerData = new PlayerData();
+        var playerData = new PlayerData(15f, analytics);
         playerData.State.Value = GameState.Start;
         _mainController = new MainController(playerData, _UIRoot, _ads, analytics);
         
